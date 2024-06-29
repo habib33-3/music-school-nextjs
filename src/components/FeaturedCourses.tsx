@@ -36,14 +36,21 @@ const FeaturedCourses = () => {
               key={course.id}
               className="flex justify-center"
             >
-              <BackgroundGradient className="flex flex-col rounded-[22px] bg-white dark:bg-zinc-900 overflow-hidden h-full max-w-sm">
-                <p className="text-lg sm:text-xl text-black mt-4 mb-2 dark:text-neutral-200">
-                  {course.title}
-                </p>
-                <p className="text-sm text-neutral-600 dark:text-neutral-400 flex-grow">
-                  {course.description}
-                </p>
-                <Link href={`/courses/${course.slug}`}>Learn More</Link>
+              <BackgroundGradient className="flex flex-col rounded-3xl bg-white dark:bg-zinc-900 overflow-hidden h-full max-w-sm shadow-lg transform transition-transform hover:scale-105">
+                <div className="p-4">
+                  <p className="text-lg sm:text-xl text-black dark:text-neutral-200 font-semibold mb-2">
+                    {course.title}
+                  </p>
+                  <p className="text-sm text-neutral-600 dark:text-neutral-400 mb-4">
+                    {course.description}
+                  </p>
+                  <Link
+                    href={`/courses/${course.slug}`}
+                    className="inline-block bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-600 transition-colors"
+                  >
+                    Learn More
+                  </Link>
+                </div>
               </BackgroundGradient>
             </div>
           ))}
